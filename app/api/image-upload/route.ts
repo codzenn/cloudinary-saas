@@ -53,9 +53,15 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ public_id: result.public_id }, { status: 200 });
   } catch (error) {
-    console.log("Upload image failed", error);
+    console.error(
+      "Upload image failed:",
+      error instanceof Error ? error.message : String(error),
+    );
     return NextResponse.json(
-      { error: "Failed to upload image" },
+      {
+        error: "Failed to upload image",
+        details: error instanceof Error ? error.message : String(error),
+      },
       { status: 500 },
     );
   }

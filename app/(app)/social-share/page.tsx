@@ -67,7 +67,7 @@ export default function SocialShare() {
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = `${selectedFormat.replace(/\s+/g, "_").toLowerCase()}.jpg`;
+        link.download = `${selectedFormat.replace(/\s+/g, "_").toLowerCase()}.png`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
