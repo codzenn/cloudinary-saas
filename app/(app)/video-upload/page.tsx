@@ -41,7 +41,7 @@ const VideoUpload = () => {
 
       if (response.status === 200) {
         console.log("Video uploaded successfully");
-        router.push("/videos");
+        router.push("/");
       }
     } catch (err) {
       console.error("Error uploading video:", err);
